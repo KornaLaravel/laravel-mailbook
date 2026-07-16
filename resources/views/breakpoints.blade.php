@@ -1,3 +1,9 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var array|string|null $display
+     */
+@endphp
 @if(config('mailbook.display_preview'))
     <div class="absolute inset-0 items-start justify-end pointer-events-none hidden sm:flex" aria-label="Preview display">
         <div class="flex gap-1 p-1 m-2 items-center justify-center pointer-events-auto rounded-lg bg-[#475569]">

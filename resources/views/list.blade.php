@@ -1,3 +1,12 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var Illuminate\Support\Collection<int, Xammie\Mailbook\Data\MailableGroup|Xammie\Mailbook\Data\MailableItem> $items
+     * @var Xammie\Mailbook\Data\MailableItem $current
+     * @var array|string|null $display
+     * @var mixed $currentLocale
+     */
+@endphp
 @php use Xammie\Mailbook\Data\MailableGroup; @endphp
 <div class="hidden md:flex flex-col w-[300px] max-w-full overflow-x-hidden overflow-y-auto">
     <div class="flex-col gap-[2px] pb-4">

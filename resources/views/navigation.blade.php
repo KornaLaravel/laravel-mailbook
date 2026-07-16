@@ -1,3 +1,14 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var string|null $subject
+     * @var mixed $send
+     * @var Xammie\Mailbook\Data\MailableItem $current
+     * @var mixed $currentLocale
+     * @var string|null $send_to
+     * @var array $locales
+     */
+@endphp
 <div class="flex items-stretch shrink-0 grow-0 bg-[#151e2b] z-20 h-16">
     <div class="flex flex-1 items-stretch justify-between">
         <div class="flex flex-col justify-center px-5 py-1">

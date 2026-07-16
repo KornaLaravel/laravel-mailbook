@@ -1,3 +1,10 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var array|string|null $display
+     * @var string $preview
+     */
+@endphp
 <div class="flex flex-col flex-1 bg-gray-900">
     <div class="text-black flex-1 flex justify-center bg-[#090816] relative">
         <iframe @class([

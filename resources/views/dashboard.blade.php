@@ -1,3 +1,21 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var Xammie\Mailbook\Data\MailableItem $current
+     * @var string|null $subject
+     * @var array $attachments
+     * @var string $size
+     * @var Illuminate\Support\Collection<int, Xammie\Mailbook\Data\MailableGroup|Xammie\Mailbook\Data\MailableItem> $items
+     * @var (array|string|null) $display
+     * @var array $locales
+     * @var mixed $currentLocale
+     * @var array<string, array|string> $meta
+     * @var string $preview
+     * @var mixed $send
+     * @var string|null $send_to
+     * @var Illuminate\Support\HtmlString $style
+     */
+@endphp
 <!doctype html>
 <html lang="en">
 <head>

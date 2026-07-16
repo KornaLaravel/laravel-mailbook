@@ -1,3 +1,12 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var Xammie\Mailbook\Data\MailableItem $mailable
+     * @var Xammie\Mailbook\Data\MailableItem $current
+     * @var mixed $display
+     * @var mixed $currentLocale
+     */
+@endphp
 @props(['mailable', 'current', 'display', 'currentLocale'])
 
 @if($mailable->hasVariants())
