@@ -1,3 +1,12 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var string $url
+     * @var string $selected
+     * @var string $label
+     * @var bool $indent
+     */
+@endphp
 @props(['url', 'selected', 'label', 'indent' => false])
 
 <a href="{{ $url }}"

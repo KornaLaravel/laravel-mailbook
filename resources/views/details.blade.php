@@ -1,3 +1,10 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var array<string, array|string> $meta
+     * @var string $size
+     */
+@endphp
 <div class="flex-col justify-between gap-2 w-[300px] overflow-y-auto overflow-x-hidden hidden xl:flex">
     <div class="flex flex-col p-4 divide-y divide-gray-600">
         @foreach($meta as $label => $values)

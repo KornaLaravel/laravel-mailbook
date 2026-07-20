@@ -1,3 +1,11 @@
+@php
+    /**
+     * @bladestan-signature
+     * @var string $label
+     * @var string $type
+     * @var string $selected
+     */
+@endphp
 @props(['label', 'type', 'selected'])
 
 <div>
