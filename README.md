@@ -1,7 +1,7 @@
 # Mailbook
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/xammie/mailbook.svg?style=flat-square)](https://packagist.org/packages/xammie/mailbook)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/xammie/mailbook/tests.yml?branch=main&label=phpunit&style=flat-square)](https://github.com/xammie/mailbook/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/xammie/mailbook/tests.yml?branch=main&label=phpunit&style=flat-square)](https://github.com/xammie/mailbook/actions?query=workflow%3Atests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/xammie/mailbook.svg?style=flat-square)](https://packagist.org/packages/xammie/mailbook)
 
 Mailbook is a Laravel package that lets you easily inspect your mails without having to actually trigger it in your
