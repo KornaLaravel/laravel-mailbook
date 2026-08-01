@@ -2,6 +2,22 @@
 
 All notable changes to `mailbook` will be documented in this file.
 
+## 1.12.0 - 2026-08-01
+
+### What's Changed
+
+* Add variable types to all Blade templates by @AJenbo in https://github.com/Xammie/mailbook/pull/162
+* Sidebar improvements by @smitmartijn in https://github.com/Xammie/mailbook/pull/163
+* Add bundler for javascript code by @Xammie in https://github.com/Xammie/mailbook/pull/164
+* Format blade templates by @Xammie in https://github.com/Xammie/mailbook/pull/165
+* Don't reload page when switching the display preview by @Xammie in https://github.com/Xammie/mailbook/pull/167
+
+### New Contributors
+
+* @smitmartijn made their first contribution in https://github.com/Xammie/mailbook/pull/163
+
+**Full Changelog**: https://github.com/Xammie/mailbook/compare/1.11.1...1.12.0
+
 ## 1.11.1 - 2026-04-07
 
 ### What's Changed
