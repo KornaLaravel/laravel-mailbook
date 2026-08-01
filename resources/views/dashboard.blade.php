@@ -7,7 +7,6 @@
      * @var array $attachments
      * @var string $size
      * @var Illuminate\Support\Collection<int, Xammie\Mailbook\Data\MailableGroup|Xammie\Mailbook\Data\MailableItem> $items
-     * @var (array|string|null) $display
      * @var array $locales
      * @var mixed $currentLocale
      * @var array<string, array|string> $meta

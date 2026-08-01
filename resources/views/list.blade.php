@@ -4,7 +4,6 @@
      *
      * @var Illuminate\Support\Collection<int, Xammie\Mailbook\Data\MailableGroup|Xammie\Mailbook\Data\MailableItem> $items
      * @var Xammie\Mailbook\Data\MailableItem $current
-     * @var array|string|null $display
      * @var mixed $currentLocale
      */
 @endphp
@@ -38,7 +37,6 @@
                             <x-mailbook::items
                                 :mailable="$subItem"
                                 :current="$current"
-                                :display="$display"
                                 :currentLocale="$currentLocale"
                             />
                         @endforeach
@@ -46,12 +44,7 @@
                     </div>
                 </div>
             @else
-                <x-mailbook::items
-                    :mailable="$item"
-                    :current="$current"
-                    :display="$display"
-                    :currentLocale="$currentLocale"
-                />
+                <x-mailbook::items :mailable="$item" :current="$current" :currentLocale="$currentLocale" />
             @endif
         @endforeach
     </div>
