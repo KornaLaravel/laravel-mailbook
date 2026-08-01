@@ -55,6 +55,7 @@ class DashboardController
             'send' => config('mailbook.send'),
             'send_to' => $this->config->getSendTo(),
             'style' => new HtmlString(File::get(__DIR__.'/../../../resources/dist/mailbook.css')),
+            'script' => new HtmlString(File::get(__DIR__.'/../../../resources/dist/mailbook.js')),
         ]);
     }
 }

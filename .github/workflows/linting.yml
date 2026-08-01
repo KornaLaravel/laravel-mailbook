@@ -1,0 +1,53 @@
+name: Linting
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Check TypeScript
+        run: yarn lint
+
+      - name: Build assets
+        run: yarn build
+
+      - name: Verify assets are up to date
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Built assets differ from committed files."
+            echo "Please run 'yarn build' locally and commit the changes."
+            git diff
+            exit 1
+          fi
+
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github

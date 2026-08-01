@@ -33,71 +33,7 @@
     @include('mailbook::display')
     @include('mailbook::details')
 </div>
-<script>
-    const STORAGE_KEY = 'mailbook-collapsed-groups';
-
-    const readCollapsedGroups = () => {
-        try {
-            const value = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-            return Array.isArray(value) ? value : [];
-        } catch {
-            return [];
-        }
-    };
-
-    const collapsedGroups = new Set(readCollapsedGroups());
-
-    document.querySelectorAll('[data-mailbook-group]').forEach((group) => {
-        const name = group.dataset.mailbookGroup;
-        const toggle = group.querySelector('[data-group-toggle]');
-        const items = group.querySelector('[data-group-items]');
-        const chevron = group.querySelector('[data-group-chevron]');
-
-        // Never hide the group that contains the selected mail
-        if (group.querySelector('[data-selected]')) {
-            collapsedGroups.delete(name);
-        }
-
-        const render = () => {
-            const collapsed = collapsedGroups.has(name);
-            items.classList.toggle('hidden', collapsed);
-            chevron.classList.toggle('-rotate-90', collapsed);
-        };
-
-        render();
-
-        toggle.addEventListener('click', () => {
-            if (collapsedGroups.has(name)) {
-                collapsedGroups.delete(name);
-            } else {
-                collapsedGroups.add(name);
-            }
-
-            localStorage.setItem(STORAGE_KEY, JSON.stringify([...collapsedGroups]));
-            render();
-        });
-    });
-
-    const sidebar = document.getElementById('mailbook-sidebar');
-    const selectedItem = sidebar?.querySelector('[data-selected]');
-
-    if (sidebar && selectedItem) {
-        const itemTop = selectedItem.getBoundingClientRect().top - sidebar.getBoundingClientRect().top + sidebar.scrollTop;
-        const itemBottom = itemTop + selectedItem.offsetHeight;
-
-        if (itemTop < sidebar.scrollTop || itemBottom > sidebar.scrollTop + sidebar.clientHeight) {
-            sidebar.scrollTop = itemTop - sidebar.clientHeight / 2 + selectedItem.offsetHeight / 2;
-        }
-    }
-
-    const select = document.getElementById('locale');
-    select.addEventListener('change', (event) => {
-        const queryVariables = new URLSearchParams(window.location.search);
-        queryVariables.set('locale', event.target.value);
-        window.location.search = queryVariables.toString();
-    });
-</script>
+<script>{{ $script }}</script>
 </body>
 </html>
 

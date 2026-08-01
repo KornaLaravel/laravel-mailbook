@@ -1,14 +1,23 @@
 {
-    "dependencies": {
+    "type": "module",
+    "devDependencies": {
+        "@rollup/plugin-swc": "^0.4.1",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@swc/core": "^1.15.47",
         "@tailwindcss/cli": "^4.2.2",
-        "tailwindcss": "^4.2.2"
+        "rollup": "^4.62.4",
+        "tailwindcss": "^4.2.2",
+        "typescript": "^7.0.2"
     },
     "resolutions": {
         "picomatch": "^2.3.2"
     },
     "scripts": {
-        "dev": "yarn watch",
-        "watch": "tailwindcss --input ./resources/css/mailbook.css --output ./resources/dist/mailbook.css --watch",
-        "build": "tailwindcss --input ./resources/css/mailbook.css --output ./resources/dist/mailbook.css --minify"
+        "watch:css": "yarn build:css --watch",
+        "watch:js": "yarn build:js --watch",
+        "build": "yarn build:css && yarn build:js",
+        "build:css": "tailwindcss --input ./resources/css/mailbook.css --output ./resources/dist/mailbook.css --minify",
+        "build:js": "rollup --config rollup.config.ts",
+        "lint": "tsc --noEmit"
     }
 }
