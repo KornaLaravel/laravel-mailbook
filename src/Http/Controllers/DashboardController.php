@@ -34,15 +34,12 @@ class DashboardController
 
         $locale = Mailbook::getLocale() ?? config('app.locale');
 
-        $display = config('mailbook.display_preview') ? $request->query('display') : null;
-
         return view('mailbook::dashboard', [
             'current' => $current,
             'subject' => $current->subject(),
             'attachments' => $current->attachments(),
             'size' => $current->size(),
             'items' => $mailables,
-            'display' => $display,
             'locales' => $this->config->getLocales(),
             'currentLocale' => $locale,
             'meta' => $current->meta(),

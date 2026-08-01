@@ -4,11 +4,10 @@
      *
      * @var Xammie\Mailbook\Data\MailableItem $mailable
      * @var Xammie\Mailbook\Data\MailableItem $current
-     * @var mixed $display
      * @var mixed $currentLocale
      */
 @endphp
-@props(['mailable', 'current', 'display', 'currentLocale'])
+@props(['mailable', 'current', 'currentLocale'])
 
 @if ($mailable->hasVariants())
     <div class="flex items-center gap-1 px-3 py-[3px] text-sm text-white">
@@ -30,7 +29,7 @@
     </div>
     @foreach ($mailable->getVariants() as $variant)
         <x-mailbook::item
-            :url="route('mailbook.dashboard', ['selected' => $mailable->class(), 'variant' => $variant->slug, 'display' => $display, 'locale' => $currentLocale])"
+            :url="route('mailbook.dashboard', ['selected' => $mailable->class(), 'variant' => $variant->slug, 'locale' => $currentLocale])"
             :selected="$mailable->is($current) && $variant->slug === $current->currentVariant()?->slug"
             :label="$variant->label"
             :indent="true"
@@ -38,7 +37,7 @@
     @endforeach
 @else
     <x-mailbook::item
-        :url="route('mailbook.dashboard', ['selected' => $mailable->class(), 'display' => $display, 'locale' => $currentLocale])"
+        :url="route('mailbook.dashboard', ['selected' => $mailable->class(), 'locale' => $currentLocale])"
         :selected="$mailable->is($current)"
         :label="$mailable->getLabel()"
     />

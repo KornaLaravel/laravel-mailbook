@@ -1,7 +1,9 @@
+import { storageGet, storageSet } from './storage.ts';
+
 const STORAGE_KEY = 'mailbook-collapsed-groups';
 
 export function collapsableGroups(): void {
-    const collapsedGroups = new Set<string>(readCollapsedGroups());
+    const collapsedGroups = new Set<string>(storageGet<string[]>(STORAGE_KEY, []));
 
     document.querySelectorAll<HTMLElement>('[data-mailbook-group]').forEach((group) => {
         const name = group.dataset.mailbookGroup!;
@@ -28,21 +30,8 @@ export function collapsableGroups(): void {
                 collapsedGroups.add(name);
             }
 
-            writeCollapsedGroups([...collapsedGroups]);
+            storageSet(STORAGE_KEY, [...collapsedGroups]);
             render();
         });
     });
-}
-
-function readCollapsedGroups(): string[] {
-    try {
-        const value = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
-        return Array.isArray(value) ? value : [];
-    } catch {
-        return [];
-    }
-}
-
-function writeCollapsedGroups(groups: string[]) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(groups))
 }

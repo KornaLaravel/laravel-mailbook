@@ -1,23 +1,16 @@
-@php
-    /**
-     * @bladestan-signature
-     *
-     * @var array|string|null $display
-     */
-@endphp
 @if (config('mailbook.display_preview'))
     <div
         class="pointer-events-none absolute inset-0 hidden items-start justify-end sm:flex"
         aria-label="Preview display"
     >
         <div class="pointer-events-auto m-2 flex items-center justify-center gap-1 rounded-lg bg-[#475569] p-1">
-            <x-mailbook::breakpoint-item label="Phone" type="phone" :selected="$display">
+            <x-mailbook::breakpoint-item label="Phone" type="phone">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
                     <path d="M10.5 18.75a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" />
                     <path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 005.25 4.125v15.75a3.375 3.375 0 003.375 3.375h6.75a3.375 3.375 0 003.375-3.375V4.125A3.375 3.375 0 0015.375.75h-6.75zM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 017.5 19.875V4.125z" clip-rule="evenodd" />
                 </svg>
             </x-mailbook::breakpoint-item>
-            <x-mailbook::breakpoint-item label="Tablet" type="tablet" :selected="$display">
+            <x-mailbook::breakpoint-item label="Tablet" type="tablet">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
                     <path d="M10.5 18a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" />
                     <path
@@ -27,7 +20,7 @@
                     />
                 </svg>
             </x-mailbook::breakpoint-item>
-            <x-mailbook::breakpoint-item label="Desktop" :type="null" :selected="$display">
+            <x-mailbook::breakpoint-item label="Desktop" type="desktop">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
                     <path
                         fill-rule="evenodd"

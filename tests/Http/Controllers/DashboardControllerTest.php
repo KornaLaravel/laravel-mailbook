@@ -227,29 +227,6 @@ class DashboardControllerTest extends TestCase
         $this->get(route('mailbook.dashboard'));
     }
 
-    public function test_can_render_other_display(): void
-    {
-        $this->fakeSeedGenerator->expectsGetCurrentSeed(null);
-
-        Mailbook::add(TestMail::class);
-
-        $this->get(route('mailbook.dashboard', ['selected' => TestMail::class, 'display' => 'phone']))
-            ->assertSuccessful()
-            ->assertViewHas('display', 'phone');
-    }
-
-    public function test_can_disable_display_preview(): void
-    {
-        $this->fakeSeedGenerator->expectsGetCurrentSeed(null);
-        config()->set('mailbook.display_preview', false);
-
-        Mailbook::add(TestMail::class);
-
-        $this->get(route('mailbook.dashboard', ['selected' => TestMail::class, 'display' => 'phone']))
-            ->assertSuccessful()
-            ->assertViewHas('display', fn ($value) => $value === null);
-    }
-
     public function test_executes_the_closure_once(): void
     {
         $this->fakeSeedGenerator->expectsGetCurrentSeed(null);
@@ -261,7 +238,7 @@ class DashboardControllerTest extends TestCase
             return new TestMail;
         });
 
-        $this->get(route('mailbook.dashboard', ['selected' => TestMail::class, 'display' => 'phone']))->assertSuccessful();
+        $this->get(route('mailbook.dashboard', ['selected' => TestMail::class]))->assertSuccessful();
 
         self::assertSame(1, $executed);
     }
@@ -330,5 +307,31 @@ class DashboardControllerTest extends TestCase
 
         $this->get(route('mailbook.dashboard', ['selected' => mb_strtolower(TestMail::class)]))
             ->assertSuccessful();
+    }
+
+    public function test_can_render_with_display_preview(): void
+    {
+        $this->fakeSeedGenerator->expectsGetCurrentSeed(null);
+
+        config()->set('mailbook.display_preview', true);
+
+        Mailbook::add(TestMail::class);
+
+        $this->get(route('mailbook.dashboard'))
+            ->assertSuccessful()
+            ->assertSeeHtml('data-display-switcher="true"');
+    }
+
+    public function test_can_render_without_display_preview(): void
+    {
+        $this->fakeSeedGenerator->expectsGetCurrentSeed(null);
+
+        config()->set('mailbook.display_preview', false);
+
+        Mailbook::add(TestMail::class);
+
+        $this->get(route('mailbook.dashboard'))
+            ->assertSuccessful()
+            ->assertDontSeeHtml('data-display-switcher="true"');
     }
 }
