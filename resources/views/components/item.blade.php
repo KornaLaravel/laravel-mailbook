@@ -10,6 +10,7 @@
 @props(['url', 'selected', 'label', 'indent' => false])
 
 <a href="{{ $url }}"
+        @if($selected) data-selected @endif
         @class([
              'px-3 py-[3px] text-sm flex gap-1 items-center transition-colors duration-100',
               $selected ? 'bg-gray-600 text-white' : 'text-gray-200 hover:text-white hover:bg-gray-700',
