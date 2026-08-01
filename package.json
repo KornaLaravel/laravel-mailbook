@@ -13,7 +13,7 @@
         "picomatch": "^2.3.2"
     },
     "scripts": {
-        "watch:css": "tailwindcss --input ./resources/css/mailbook.css --output ./resources/dist/mailbook.css --watch",
+        "watch:css": "yarn build:css --watch",
         "watch:js": "yarn build:js --watch",
         "build": "yarn build:css && yarn build:js",
         "build:css": "tailwindcss --input ./resources/css/mailbook.css --output ./resources/dist/mailbook.css --minify",
