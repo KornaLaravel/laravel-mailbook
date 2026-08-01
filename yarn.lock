@@ -167,6 +167,16 @@
     "@parcel/watcher-win32-ia32" "2.5.1"
     "@parcel/watcher-win32-x64" "2.5.1"
 
+"@prettier/html-tags@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@prettier/html-tags/-/html-tags-2.2.0.tgz#a8a98047856272dd6309831d0edd6966592acce8"
+  integrity sha512-6qLjt8ncestmSfEOeVf/kX5VhkinUsppybvkwn1X7wu+BjQ/GBSZYu7cytxdCvi5BaljCGIAr4rmfL5zVqdgyQ==
+
+"@prettier/parse-srcset@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@prettier/parse-srcset/-/parse-srcset-3.1.0.tgz#10a6785b84812b5ec506c16812fc2e3c6bb10b9e"
+  integrity sha512-FIRv2rZotO9NP/r66taYqD1zICpPiBbrECqjKV/xqNotqDxF7fLzzUeK+1RSRx9Tenk0DajR/GcRmTJ2qtHaKQ==
+
 "@rollup/plugin-swc@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-swc/-/plugin-swc-0.4.1.tgz#90f1a8bb5bf6f11a19fef3d9ce3df60a264e1be2"
@@ -696,6 +706,11 @@ graceful-fs@^4.2.4:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
+html-element-attributes@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/html-element-attributes/-/html-element-attributes-3.5.0.tgz#355a3890005201031046b79a55c9b04f696bb135"
+  integrity sha512-rU2BFhp0kQla9sqPBI46C+zbP6PFOtD7z6XNAJ6as+cGecCDXLx0W3aIs6XdPLmBBG/Fy1meRi/n65Exofz4Qw==
+
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
@@ -826,6 +841,25 @@ picomatch@^2.3.1, picomatch@^2.3.2, picomatch@^4.0.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.2.tgz#5a942915e26b372dc0f0e6753149a16e6b1c5601"
   integrity sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==
+
+prettier-plugin-blade@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-blade/-/prettier-plugin-blade-3.2.2.tgz#8de876155a9cb6fdb77b3b897305a26e81463cb6"
+  integrity sha512-CPAlkLTAnvEZfvmRZ1CgdeePpfhxz/Bggei2lSAYcrsBFBhSZ04Ky0ttL4VB1u2q3iKh411vBi0T/Wx3GHWq/g==
+  dependencies:
+    "@prettier/html-tags" "^2.2.0"
+    "@prettier/parse-srcset" "^3.1.0"
+    html-element-attributes "^3.5.0"
+
+prettier-plugin-tailwindcss@^0.8.0:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.8.1.tgz#bb30f2794dbaa2ef0d36e39ebc258c8c03d8f0c3"
+  integrity sha512-iaFMYqDsE4ffdDkn5qup0j5f2aCEBFZrdrZnvu9QKTlWx/iGPeQ4HHu7b7fCPMxeo9nwQBiOAh2nSypdFYWJkw==
+
+prettier@^3.8.4:
+  version "3.9.6"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.6.tgz#b3ea5146515d40fc53f18aa63f74dfab1e10dbf6"
+  integrity sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==
 
 rollup@^4.62.4:
   version "4.62.4"
